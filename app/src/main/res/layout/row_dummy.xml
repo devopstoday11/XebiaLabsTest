@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.xebialabstest.data.api.apiresponse.Result" />
+
+    </data>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="@dimen/d_5dp"
+        app:contentPadding="@dimen/d_5dp"
+        android:layout_marginTop="@dimen/d_5dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_post"
+                android:layout_width="@dimen/d_50dp"
+                android:layout_height="@dimen/d_50dp"
+                android:layout_centerVertical="true"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:background="@drawable/d_shape_circle_grey_filled"/>
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_go"
+                android:layout_width="@dimen/d_25dp"
+                android:layout_height="@dimen/d_25dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                app:srcCompat="@drawable/ic_chevron_right_black"
+                android:layout_alignParentRight="true" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_tittle"
+                android:text="@{viewModel.title}"
+                android:layout_toRightOf="@+id/iv_post"
+                android:layout_toLeftOf="@+id/iv_go"
+                android:layout_marginLeft="@dimen/d_10dp"
+                android:layout_marginRight="@dimen/d_10dp"
+                android:maxLines="2"
+                android:textColor="@color/colorPrimaryDark"
+                android:ellipsize="end"
+                android:textSize="@dimen/d_13sp"
+                style="@style/TextAppearance.AppCompat.Body1"
+                tools:text="Supports of the Democratics candidate Jon Ossoff after his"
+                android:layout_toEndOf="@+id/iv_post"
+                android:layout_toStartOf="@+id/iv_go" />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_tittle"
+                android:layout_toLeftOf="@+id/iv_more"
+                android:layout_toRightOf="@+id/iv_post"
+                android:layout_marginLeft="@dimen/d_5dp"
+                android:layout_marginRight="@dimen/d_5dp">
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_author"
+                    app:layout_constrainedWidth="true"
+                    android:layout_marginTop="@dimen/d_5dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:text="@{viewModel.byline}"
+                    android:layout_marginLeft="@dimen/d_10dp"
+                    android:layout_marginRight="@dimen/d_10dp"
+                    android:maxLines="2"
+                    android:ellipsize="end"
+
+                    android:textSize="@dimen/d_12sp"
+                    style="@style/TextAppearance.AppCompat.Body1"
+                    tools:text="Jon Ossoff after hisbdkknckzncknkkznckzncsdbkvbdskvbksdbvkdsbvkbsvkbsdkvbsdvkbdsk"
+
+
+
+                    />
+
+
+                <LinearLayout
+                    android:id="@+id/ll_dates"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_author"
+                    app:layout_constraintStart_toEndOf="@+id/tv_author"
+                    app:layout_constraintEnd_toEndOf="parent"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/d_20dp"
+                        android:layout_height="@dimen/d_20dp"
+                        app:srcCompat="@drawable/ic_perm_contact_calendar_black"/>
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="kbskfsbakabks"
+                        android:layout_marginLeft="@dimen/d_3dp"
+                        android:text="@{viewModel.publishedDate}"
+                        android:drawablePadding="@dimen/d_5dp"
+                        android:layout_below="@+id/tv_author"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:layout_alignParentEnd="true"
+                        android:textSize="@dimen/d_12sp"
+                        android:layout_alignParentRight="true"
+
+                        />
+
+                </LinearLayout>
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

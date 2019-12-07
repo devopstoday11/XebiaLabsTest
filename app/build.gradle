@@ -1,0 +1,67 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+    defaultConfig {
+        applicationId "com.example.xebialabstest"
+        minSdkVersion 15
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        vectorDrawables.useSupportLibrary = true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            buildConfigField "String", "API_KEY", "\"MulMdHpMAevThUvnGGRgj97Q6WsusE3w\""
+            buildConfigField "String", "BASE_URL", "\"https://api.nytimes.com\""
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled false
+            buildConfigField "String", "API_KEY", "\"MulMdHpMAevThUvnGGRgj97Q6WsusE3w\""
+            buildConfigField "String", "BASE_URL", "\"https://api.nytimes.com\""
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    dataBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+    def lifecycle_version = "2.1.0"
+    def glideVersion = "3.7.0"
+    def retrofit_lib_version = "2.4.0"
+    def logging_interceptor_version="3.6.0"
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+
+    //dependecies
+
+
+    // ViewModel and LiveData
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
+
+    //recycler view
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    // image loading
+    implementation "com.github.bumptech.glide:glide:$glideVersion"
+
+    //retrofit
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_lib_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_lib_version"
+    implementation "com.squareup.okhttp3:logging-interceptor:$logging_interceptor_version"
+    implementation 'com.google.android.material:material:1.0.0'
+
+
+}

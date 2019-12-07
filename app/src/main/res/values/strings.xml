@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">XebiaLabsTest</string>
+    <string name="s_home_tittle">NY Times Most Popular</string>
+    <string name="s_plz_check_internet_string">Please check internet access</string>
+    <string name="s_retry">Retry</string>
+    <string name="s_something_went_wrong">Something went wrong</string>
+    <string name="s_no_record_found">No record found</string>
+</resources>

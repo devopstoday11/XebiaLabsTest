@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.xebialabstest.ui.viewmodels.MainActivityViewModel" />
+
+    </data>
+
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/drawer_layout">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!-- custom tool bar-->
+            <include
+                layout="@layout/layout_custom_tool_bar"
+                android:id="@+id/custom_tool_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/srl_movies"
+                android:layout_below="@+id/custom_tool_bar">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/rl_tool_bar"
+                    android:orientation="vertical"
+                    tools:listitem="@layout/row_latest_news"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    android:id="@+id/rv_news">
+                </androidx.recyclerview.widget.RecyclerView>
+
+            </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        </RelativeLayout>
+
+        <!-- drawer layout code -->
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="@android:color/black">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/d_20dp"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_width="@dimen/d_100dp"
+                    android:layout_height="@dimen/d_100dp"
+                    android:layout_gravity="center"
+                    android:src="@mipmap/ic_launcher"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/d_5dp"
+                    android:background="@android:color/white"/>
+
+            </LinearLayout>
+        </FrameLayout>
+
+    </androidx.drawerlayout.widget.DrawerLayout>
+</layout>
