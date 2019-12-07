@@ -15,13 +15,13 @@ android {
     buildTypes {
         release {
             minifyEnabled false
-            buildConfigField "String", "API_KEY", "\"MulMdHpMAevThUvnGGRgj97Q6WsusE3w\""
+            buildConfigField "String", "API_KEY", "\"paste apikey\""
             buildConfigField "String", "BASE_URL", "\"https://api.nytimes.com\""
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
         debug {
             minifyEnabled false
-            buildConfigField "String", "API_KEY", "\"MulMdHpMAevThUvnGGRgj97Q6WsusE3w\""
+            buildConfigField "String", "API_KEY", "\"paste apikey\""
             buildConfigField "String", "BASE_URL", "\"https://api.nytimes.com\""
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
