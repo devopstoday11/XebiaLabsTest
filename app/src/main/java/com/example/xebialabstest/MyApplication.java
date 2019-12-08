@@ -6,17 +6,12 @@ import com.example.xebialabstest.data.AppDataManager;
 
 public class MyApplication  extends Application {
 
-    private  MyApplication instance;
+    private static MyApplication instance;
 
 
-    public MyApplication getInstance()
+    public static MyApplication getInstance()
     {
-        if (instance == null) {
-            synchronized (MyApplication.class) {
-                if (instance == null)
-                    instance = this;
-            }
-        }
+
         return instance;
 
     }

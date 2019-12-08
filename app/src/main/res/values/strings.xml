@@ -5,4 +5,8 @@
     <string name="s_retry">Retry</string>
     <string name="s_something_went_wrong">Something went wrong</string>
     <string name="s_no_record_found">No record found</string>
+    <string name="s_under_dev">Under Developement</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

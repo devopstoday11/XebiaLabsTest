@@ -9,10 +9,13 @@
             name="viewModel"
             type="com.example.xebialabstest.data.api.apiresponse.Result" />
 
+     <variable
+         name="image"
+         type="String" />
     </data>
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/d_100dp"
         app:cardElevation="@dimen/d_5dp"
         app:contentPadding="@dimen/d_5dp"
         android:layout_marginTop="@dimen/d_5dp">
@@ -28,6 +31,7 @@
             android:id="@+id/iv_post"
             android:layout_width="@dimen/d_50dp"
             android:layout_height="@dimen/d_50dp"
+            app:loadImage="@{image}"
             android:layout_centerVertical="true"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -101,12 +105,15 @@
             <androidx.appcompat.widget.AppCompatImageView
                 android:layout_width="@dimen/d_15dp"
                 android:layout_height="@dimen/d_15dp"
+                android:layout_gravity="center_vertical"
                 app:srcCompat="@drawable/ic_perm_contact_calendar_black"/>
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
                 tools:text="kbskfsbakabks"
+                android:layout_marginRight="@dimen/d_5dp"
                 android:text="@{viewModel.publishedDate}"
                 android:textSize="@dimen/d_12sp"
                 />

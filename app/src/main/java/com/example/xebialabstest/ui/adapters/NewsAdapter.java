@@ -8,6 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.xebialabstest.base.BaseViewHolder;
+import com.example.xebialabstest.data.api.apiresponse.Medium;
 import com.example.xebialabstest.data.api.apiresponse.Result;
 import com.example.xebialabstest.databinding.RowLatestNewsBinding;
 import com.example.xebialabstest.interfaces.ActionCallBack;
@@ -15,14 +16,14 @@ import com.example.xebialabstest.interfaces.ActionCallBack;
 import java.util.List;
 
 
-public class MainActivityAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class NewsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private List<Result> newsList;
     private ActionCallBack callBack;
 
 
     //constructor
-    public MainActivityAdapter(List<Result> newsList, ActionCallBack callBack) {
+    public NewsAdapter(List<Result> newsList, ActionCallBack callBack) {
         this.newsList = newsList;
         this.callBack = callBack;
     }
@@ -59,6 +60,11 @@ public class MainActivityAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     private void populateData(RecyclerView.ViewHolder viewHolder, int position) {
         final MainViewHolder holder = ((MainViewHolder) viewHolder);
         holder.binding.setViewModel(newsList.get(position));
+        if(newsList.get(position).getMedia()!=null && newsList.get(position).getMedia().size()>0){
+            Medium mediaList = newsList.get(position).getMedia().get(0);
+            if(mediaList.getType()!=null && mediaList.getType().equals("image") && mediaList.getMediaMetadata()!=null && mediaList.getMediaMetadata().size()>0)
+                holder.binding.setImage(mediaList.getMediaMetadata().get(0).getUrl());
+        }
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

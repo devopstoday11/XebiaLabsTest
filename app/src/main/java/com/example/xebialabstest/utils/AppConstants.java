@@ -15,6 +15,7 @@ public final class AppConstants {
     public static final String TIMESTAMP_FORMAT = "yyyy-mm-dd";
     public static final int RC_POPULAR_NEWS =11 ;
     public static final String API_KEY ="api-key" ;
+    public static final String DETAILS_MODEL ="detailModel" ;
 
 
     private AppConstants() {

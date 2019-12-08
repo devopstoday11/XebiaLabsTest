@@ -10,9 +10,9 @@ import androidx.databinding.BindingAdapter;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestListener;
+import com.bumptech.glide.request.target.BitmapImageViewTarget;
 import com.bumptech.glide.request.target.Target;
-
-
+import com.example.xebialabstest.MyApplication;
 
 
 public final class BindingUtils {
@@ -26,6 +26,22 @@ public final class BindingUtils {
     public static void setImageUrl(ImageView imageView, String url) {
         Context context = imageView.getContext();
         Glide.with(context).load(url).centerCrop().into(imageView);
+    }
+
+    @BindingAdapter("loadImage")
+    public static void setImage(final ImageView imageView, String url) {
+
+        Glide.with(MyApplication.getInstance()).load(url).asBitmap().centerCrop().into(new BitmapImageViewTarget(imageView) {
+            @Override
+            protected void setResource(Bitmap resource) {
+                RoundedBitmapDrawable circularBitmapDrawable =
+                        RoundedBitmapDrawableFactory.create(MyApplication.getInstance().getResources(), resource);
+                circularBitmapDrawable.setCircular(true);
+                imageView.setImageDrawable(circularBitmapDrawable);
+
+            }
+        });
+
     }
 
 

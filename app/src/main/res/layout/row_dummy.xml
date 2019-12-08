@@ -1,141 +1,123 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
         <variable
             name="viewModel"
             type="com.example.xebialabstest.data.api.apiresponse.Result" />
 
+        <variable
+            name="image"
+            type="String" />
     </data>
+
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/d_100dp"
         app:cardElevation="@dimen/d_5dp"
         app:contentPadding="@dimen/d_5dp"
-        android:layout_marginTop="@dimen/d_5dp">
+        android:layout_marginTop="@dimen/d_2dp"
+        >
 
-        <RelativeLayout
-            android:layout_width="match_parent"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/spacing_normal"
+        android:paddingTop="0dp"
+        android:paddingRight="@dimen/spacing_normal"
+        android:paddingBottom="@dimen/d_5dp"
+        android:weightSum="1">
+
+        <ImageView
+            android:id="@+id/xImageViewLeft"
+            android:layout_width="@dimen/d_50dp"
+            android:layout_height="@dimen/d_50dp"
+            android:layout_gravity="center"
+            android:contentDescription="@null"
+            android:scaleType="centerCrop"
+            tools:src="@tools:sample/avatars" />
+
+        <LinearLayout
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            >
+            android:layout_weight="1"
+            android:orientation="vertical">
 
-
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/iv_post"
-                android:layout_width="@dimen/d_50dp"
-                android:layout_height="@dimen/d_50dp"
-                android:layout_centerVertical="true"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
-                android:background="@drawable/d_shape_circle_grey_filled"/>
-
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/iv_go"
-                android:layout_width="@dimen/d_25dp"
-                android:layout_height="@dimen/d_25dp"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-                app:srcCompat="@drawable/ic_chevron_right_black"
-                android:layout_alignParentRight="true" />
-
-
-            <androidx.appcompat.widget.AppCompatTextView
+            <TextView
+                android:id="@+id/xTextViewNewsSummary"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/tv_tittle"
-                android:text="@{viewModel.title}"
-                android:layout_toRightOf="@+id/iv_post"
-                android:layout_toLeftOf="@+id/iv_go"
-                android:layout_marginLeft="@dimen/d_10dp"
-                android:layout_marginRight="@dimen/d_10dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
                 android:maxLines="2"
-                android:textColor="@color/colorPrimaryDark"
                 android:ellipsize="end"
-                android:textSize="@dimen/d_13sp"
-                style="@style/TextAppearance.AppCompat.Body1"
-                tools:text="Supports of the Democratics candidate Jon Ossoff after his"
-                android:layout_toEndOf="@+id/iv_post"
-                android:layout_toStartOf="@+id/iv_go" />
+                android:textColor="@android:color/black"
+                tools:text="ample/lorsfnlsdnflsndflnsldfndslflsnflsnflslsdfnlsdnflnsdflldsnfldnsflndslfem" />
 
-
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <TextView
+                android:id="@+id/xTextViewBy"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tv_tittle"
-                android:layout_toLeftOf="@+id/iv_more"
-                android:layout_toRightOf="@+id/iv_post"
-                android:layout_marginLeft="@dimen/d_5dp"
-                android:layout_marginRight="@dimen/d_5dp">
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="8dp"
+                android:gravity="center_vertical"
+                android:maxLines="1"
+                android:padding="0dp"
+                android:visibility="gone"
+                android:textColor="@android:color/darker_gray"
+                tools:text="@tools:sample/full_names" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="@dimen/d_5dp"
+                android:orientation="horizontal"
+                android:padding="0dp"
+                android:weightSum="1"
+                android:layout_marginLeft="8dp">
+
                 <androidx.appcompat.widget.AppCompatTextView
-                    android:layout_width="match_parent"
+                    android:id="@+id/xTextViewLocation"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:id="@+id/tv_author"
-                    app:layout_constrainedWidth="true"
-                    android:layout_marginTop="@dimen/d_5dp"
-                    android:textColor="@color/colorPrimaryDark"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    android:text="@{viewModel.byline}"
-                    android:layout_marginLeft="@dimen/d_10dp"
-                    android:layout_marginRight="@dimen/d_10dp"
-                    android:maxLines="2"
-                    android:ellipsize="end"
+                    android:layout_gravity="left|center"
+                    android:layout_weight="1"
+                    android:gravity="left|center"
+                    android:maxLines="1"
+                    android:textColor="@android:color/darker_gray"
+                    tools:text="cities" />
 
-                    android:textSize="@dimen/d_12sp"
-                    style="@style/TextAppearance.AppCompat.Body1"
-                    tools:text="Jon Ossoff after hisbdkknckzncknkkznckzncsdbkvbdskvbksdbvkdsbvkbsvkbsdkvbsdvkbdsk"
-
-
-
-                    />
-
-
-                <LinearLayout
-                    android:id="@+id/ll_dates"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_author"
-                    app:layout_constraintStart_toEndOf="@+id/tv_author"
-                    app:layout_constraintEnd_toEndOf="parent"
-
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/xTextViewDate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:layout_gravity="right|center"
+                    android:drawablePadding="@dimen/d_5dp"
+                    android:drawableLeft="@drawable/ic_perm_contact_calendar_black"
+                    android:gravity="right|center"
+                    android:maxLines="1"
+                    tools:text="@tools:sample/date/ddmmyy" />
+            </LinearLayout>
+        </LinearLayout>
 
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:layout_width="@dimen/d_20dp"
-                        android:layout_height="@dimen/d_20dp"
-                        app:srcCompat="@drawable/ic_perm_contact_calendar_black"/>
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        tools:text="kbskfsbakabks"
-                        android:layout_marginLeft="@dimen/d_3dp"
-                        android:text="@{viewModel.publishedDate}"
-                        android:drawablePadding="@dimen/d_5dp"
-                        android:layout_below="@+id/tv_author"
-                        android:textColor="@color/colorPrimaryDark"
-                        android:layout_alignParentEnd="true"
-                        android:textSize="@dimen/d_12sp"
-                        android:layout_alignParentRight="true"
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/xImageViewRight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:contentDescription="@null"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/ic_chevron_right_black"
+            android:tint="@android:color/darker_gray" />
 
-                        />
-
-                </LinearLayout>
-
-
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
-
-
-
-
-
-        </RelativeLayout>
+    </LinearLayout>
     </androidx.cardview.widget.CardView>
 </layout>

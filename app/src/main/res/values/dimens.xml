@@ -17,4 +17,8 @@
     <dimen name="d_3dp">3dp</dimen>
     <dimen name="d_15dp">15dp</dimen>
     <dimen name="d_11sp">11sp</dimen>
+    <dimen name="d_200dp">200dp</dimen>
+    <dimen name="spacing_normal">8dp</dimen>
+    <dimen name="d_250dp">250dp</dimen>
+    <dimen name="d_2dp">2dp</dimen>
 </resources>

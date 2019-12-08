@@ -25,23 +25,13 @@
                 android:id="@+id/custom_tool_bar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
-            <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+
+            <FrameLayout
+                android:id="@+id/fl_container"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/srl_movies"
-                android:layout_below="@+id/custom_tool_bar">
+                android:layout_below="@+id/custom_tool_bar"/>
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_below="@+id/rl_tool_bar"
-                    android:orientation="vertical"
-                    tools:listitem="@layout/row_latest_news"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                    android:id="@+id/rv_news">
-                </androidx.recyclerview.widget.RecyclerView>
-
-            </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
         </RelativeLayout>
 

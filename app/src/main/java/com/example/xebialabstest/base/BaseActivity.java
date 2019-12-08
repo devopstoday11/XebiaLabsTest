@@ -37,9 +37,7 @@ public abstract class BaseActivity<MyDataBinding extends ViewDataBinding,MyViewM
     private Dialog mProgressDialog;
 
 
-    public MyViewModel getViewModel() {
-        return viewModel;
-    }
+    public abstract MyViewModel getViewModel();
 
     public  void setViewModel(MyViewModel viewModel){
         this.viewModel=viewModel;
@@ -146,7 +144,7 @@ public abstract class BaseActivity<MyDataBinding extends ViewDataBinding,MyViewM
     public void replaceFragment(@IdRes int resourceID, Fragment fragment, boolean addToBackStack) {
         FragmentManager manager = getSupportFragmentManager();
         FragmentTransaction transaction = manager.beginTransaction();
-        transaction.setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_right, R.anim.enter_from_right, R.anim.exit_to_right);
+       // transaction.setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_right, R.anim.enter_from_right, R.anim.exit_to_right);
         transaction.replace(resourceID, fragment, fragment.getClass().getSimpleName());
         if (addToBackStack)
             transaction.addToBackStack(fragment.getClass().getSimpleName());

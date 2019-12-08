@@ -19,7 +19,7 @@ public abstract class BaseFragment<MyDataBinding extends ViewDataBinding, MyView
     public MyDataBinding binding;
     public MyViewModel viewModel;
 
-    private BaseActivity mActivity;
+    public BaseActivity mActivity;
     private View mRootView;
 
 
